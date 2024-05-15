@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Item Search</title>
@@ -15,16 +14,50 @@
             margin: 10px;
             width: 250px;
         }
-        #loginContainer {
-            text-align: center; /* Center contents horizontally */
+        /* Centering container */
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Make the container full height of the viewport */
         }
+
+        /* Login form styles */
         #loginForm {
             padding: 20px;
-            width: 250px;
-            text-align: center; /* Center text */
             border: 1px solid #ccc;
             border-radius: 5px;
             background-color: #f9f9f9;
+            width: 300px;
+            text-align: center; /* Center text */
+        }
+
+        /* Add some basic styling to the form fields */
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Center the button */
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #loginContainer {
+            text-align: center; /* Center contents horizontally */
+        }
+        #errorMsg {
+            color: red;
+            display: none;
         }
         #mainContent, #pageTitle, #subTitle {
             display: none;
@@ -41,15 +74,15 @@
     <h3 id="subTitle">Customer Data Collection</h3>
 
     <!-- Login Form -->
-    <div id="loginContainer">
+    <div class="center-container" id="loginContainer">
         <form id="loginForm">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required><br><br>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br><br>
-            <button type="button" onclick="login()">Login</button>
+            <button type="button" onclick="login()" style="background-color: #4CAF50; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer; width: 100%;">Login</button>
         </form>
-        <p id="errorMsg" style="color: red; display: none;">Wrong username or password.</p>
+        <p id="errorMsg">Wrong username or password.</p>
     </div>
 
     <!-- Main Content -->
